@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .hihi { width: 100px; height: 100px; background-color: pink;
+            transition: background-color .5s;
+         }
+    </style>
 </head>
 <body>
-    
+    <div class="hihi"></div>
+    <script>
+       var hihi = document.querySelector('.hihi'),
+       hihi_col = hihi.style.backgroundColor;
+       hihi.style.backgroundColor = 'pink';
+       window.addEventListener('click', function(){
+           if (hihi.style.backgroundColor == 'pink'){
+               hihi.style.backgroundColor = 'red'
+           }else{
+               hihi.style.backgroundColor = 'pink'
+           }
+       });
+       console.log(hihi_col);
+       
+    </script>
 </body>
 </html>
