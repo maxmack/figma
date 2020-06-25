@@ -7,8 +7,8 @@
     <style>
         body { height: 5000px; }
         .count { position: fixed; top: 0; right: 0; width: 100px; height: 100px; border: 1px solid red; box-sizing: border-box; }
-        .box { position: fixed; top: 100%; left: 10%; width: 100px; height: 100px; background-color: pink; }
-        .box2 { left: 30%; }
+        .box1 { position: fixed; top: 100%; left: 10%; width: 200px; font-size: 20px;   }
+        .box2 { position: fixed; top: 100%; left: 10%; width: 200px; font-size: 20px; }
         .box3 { left: 40%; }
         .box4 { left: 50%; }
 
@@ -16,8 +16,8 @@
 </head>
 <body>
     <div class="count"></div>
-    <div class="box box1" data-0="top:100%" data-500="top: -10%"></div>
-    <div class="box box2" data-0="top:100%" data-400="top: -10%"></div>
+    <div class="box box1" data-0="top:100%" data-500="top: 20%">안녕하세요</div>
+    <div class="box box2" data-400="top:100%" data-800="top: 25%">저는 정정훈입니다.</div>
     <div class="box box3" data-0="top:100%" data-2500="top: -10%"></div>
     <div class="box box4" data-0="top:100%" data-5000="top: -10%"></div>
     <script type="text/javascript" src="./assets/js/jquery.min_1.12.4.js"></script>
