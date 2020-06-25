@@ -5,26 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .hihi { width: 100px; height: 100px; background-color: pink;
-            transition: background-color .5s;
-         }
+        body { height: 5000px; }
+        .count { position: fixed; top: 0; right: 0; width: 100px; height: 100px; border: 1px solid red; box-sizing: border-box; }
+        .box { position: fixed; top: 100px; left: 0; width: 200px; height: 200px; background-color: pink; }
+
+        @media (max-width:575px) {
+            .box { width: 10%; height: 10%; }
+            
+        }
     </style>
 </head>
 <body>
-    <div class="hihi"></div>
-    <script>
-       var hihi = document.querySelector('.hihi'),
-       hihi_col = hihi.style.backgroundColor;
-       hihi.style.backgroundColor = 'pink';
-       window.addEventListener('click', function(){
-           if (hihi.style.backgroundColor == 'pink'){
-               hihi.style.backgroundColor = 'red'
-           }else{
-               hihi.style.backgroundColor = 'pink'
-           }
-       });
-       console.log(hihi_col);
-       
-    </script>
+    <div class="count"></div>
+    <div class="box" data-0="left:0%" data-500="left:50%"></div>
+    <script type="text/javascript" src="./assets/js/jquery.min_1.12.4.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-ui-1.12.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/skrollr.js"></script>
+	<script type="text/javascript">
+	var s = skrollr.init({
+                edgeStrategy: 'set', 
+                easing: 'linear',
+                mobileDeceleration: '0.4'
+            });
+            $(window).scroll(function(){
+                var wscroll1 = $(window).scrollTop();
+                $(".count").text(wscroll1);
+                console.log(wscroll1)
+
+                //sec4 깜빡이 애니메이션
+                if ( wscroll1 > 15200 ) {
+                    $('.sec4').css({animation: "back01 linear .7s alternate infinite"});
+                }
+                else { 
+                    $('.sec4').css({animation: "none"});
+                }
+
+            });
+	</script>
 </body>
 </html>
