@@ -7,17 +7,19 @@
     <style>
         body { height: 5000px; }
         .count { position: fixed; top: 0; right: 0; width: 100px; height: 100px; border: 1px solid red; box-sizing: border-box; }
-        .box { position: fixed; top: 100px; left: 0; width: 200px; height: 200px; background-color: pink; }
+        .box { position: fixed; top: 100%; left: 10%; width: 100px; height: 100px; background-color: pink; }
+        .box2 { left: 30%; }
+        .box3 { left: 40%; }
+        .box4 { left: 50%; }
 
-        @media (max-width:575px) {
-            .box { width: 10%; height: 10%; }
-            
-        }
     </style>
 </head>
 <body>
     <div class="count"></div>
-    <div class="box" data-0="left:0%" data-500="left:50%"></div>
+    <div class="box box1" data-0="top:100%" data-500="top: -10%"></div>
+    <div class="box box2" data-0="top:100%" data-400="top: -10%"></div>
+    <div class="box box3" data-0="top:100%" data-2500="top: -10%"></div>
+    <div class="box box4" data-0="top:100%" data-5000="top: -10%"></div>
     <script type="text/javascript" src="./assets/js/jquery.min_1.12.4.js"></script>
     <script type="text/javascript" src="./assets/js/jquery-ui-1.12.1.min.js"></script>
     <script type="text/javascript" src="./assets/js/skrollr.js"></script>
@@ -31,14 +33,6 @@
                 var wscroll1 = $(window).scrollTop();
                 $(".count").text(wscroll1);
                 console.log(wscroll1)
-
-                //sec4 깜빡이 애니메이션
-                if ( wscroll1 > 15200 ) {
-                    $('.sec4').css({animation: "back01 linear .7s alternate infinite"});
-                }
-                else { 
-                    $('.sec4').css({animation: "none"});
-                }
 
             });
 	</script>
